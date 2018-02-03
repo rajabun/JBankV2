@@ -27,18 +27,18 @@
 public class Bank
 {
     // instance variables - replace the example below with your own
-    private double creditInterestRate;
-    private String closeTime;
-    private double investmentInterestRate;
-    private int lastCustID;
-    private int nextCustID;
-    private String phone;
-    private double premiumInterestRate;
-    private String startTime;
-    public String website;
-    public String bankAddress = "1234 JavaStreet, AnyCity, ThisState, 34567";
-    public int maxNumOfCustomers = 20;
-    public String bankName = "JBANK";
+    private static double creditInterestRate;
+    private static String closeTime;
+    private static double investmentInterestRate;
+    private static int lastCustID;
+    private static int nextCustID;
+    private static String phone;
+    private static double premiumInterestRate;
+    private static String startTime;
+    public static String website;
+    public static String bankAddress = "1234 JavaStreet, AnyCity, ThisState, 34567";
+    public static int maxNumOfCustomers = 20;
+    public static String bankName = "JBANK";
 
     /**
      * Constructor for objects of class Bank
@@ -53,7 +53,7 @@ public class Bank
      * Ditambahkan saat modul 1
      * @return bankAddress Mengembalikan isi data dari instance variable bankAddress
      */
-    public String getAddress()
+    public static String getAddress()
     {
         return " ";
     }
@@ -63,7 +63,7 @@ public class Bank
      * Ditambahkan saat modul 1
      * @return creditInterestRate Mengembalikan isi data dari instance variable creditInterestRate
      */
-    public double getCreditRate()
+    public static double getCreditRate()
     {
         return 0;
     }
@@ -73,7 +73,7 @@ public class Bank
      * Ditambahkan saat modul 1
      * @return investmentInterestRate Mengembalikan isi data dari instance variable investmentInterestRate
      */
-    public double getInvestmentRate()
+    public static double getInvestmentRate()
     {
         return 0;
     }
@@ -83,7 +83,7 @@ public class Bank
      * Ditambahkan saat modul 1
      * @return time Mengembalikan isi data dari instance variable time
      */
-    public String getHoursOfOperation()
+    public static String getHoursOfOperation()
     {
         return " ";
     }
@@ -93,7 +93,7 @@ public class Bank
      * Ditambahkan saat modul 1
      * @return lastCustID Mengembalikan isi data dari instance variable lastCustID
      */
-    public int getLastID()
+    public static int getLastID()
     {
         return 0;
     }
@@ -103,7 +103,7 @@ public class Bank
      * Ditambahkan saat modul 1
      * @return maxNumOfCustomers Mengembalikan isi data dari instance variable maxNumOfCustomers
      */
-    public int getMaxCustomers()
+    public static int getMaxCustomers()
     {
         return 0;
     }
@@ -113,7 +113,7 @@ public class Bank
      * Ditambahkan saat modul 1
      * @return bankName Mengembalikan isi data dari instance variable bankName
      */
-    public String getName()
+    public static String getName()
     {
         return " ";
     }
@@ -123,7 +123,7 @@ public class Bank
      * Ditambahkan saat modul 1
      * @return nextCustID Mengembalikan isi data dari instance variable nextCustID
      */
-    public int getNextID()
+    public static int getNextID()
     {
         return 0;
     }
@@ -133,7 +133,7 @@ public class Bank
      * Ditambahkan saat modul 1
      * @return website Mengembalikan isi data dari instance variable website
      */
-    public String getWebsite()
+    public static String getWebsite()
     {
         return " ";
     }
@@ -143,7 +143,7 @@ public class Bank
      * Ditambahkan saat modul 1
      * @return premiumInterestRate Mengembalikan isi data dari instance variable premiumInterestRate
      */
-    public double getPremiumRate()
+    public static double getPremiumRate()
     {
         return 0;
     }
@@ -153,7 +153,7 @@ public class Bank
      * Ditambahkan saat modul 1
      * @return phone Mengembalikan isi data dari instance variable phone
      */
-    public String getPhone()
+    public static String getPhone()
     {
         return " ";
     }
@@ -163,7 +163,7 @@ public class Bank
      * Ditambahkan saat modul 1
      * @param rate Parameter dari method setCreditRate dalam bentuk double
      */
-    public void setCreditRate(double rate)
+    public static void setCreditRate(double rate)
     {
         
     }
@@ -173,7 +173,7 @@ public class Bank
      * Ditambahkan saat modul 1
      * @param rate Parameter dari method setInvestmentRate dalam bentuk double
      */
-    public void setInvestmentRate(double rate)
+    public static void setInvestmentRate(double rate)
     {
         
     }
@@ -183,7 +183,7 @@ public class Bank
      * Ditambahkan saat modul 1
      * @param rate Parameter dari method setPremium dalam bentuk double
      */
-    public void setPremium(double rate)
+    public static void setPremium(double rate)
     {
         
     }
