@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Teller
+comment0.text=\r\n\ class\ Teller\ berisi\ method\ main\ yang\ berfungsi\ sebagai\ main\ program\ dari\ aplikasi\ JBank.\r\n\ \r\n\ @author\ Muhammad\ Rajab(1206244415)\r\n\ @version\ 0.8,\ 2018\r\n\ @version\ 0.7,\ 2018\r\n\ @version\ 0.6,\ 2018\r\n\ @version\ 0.5,\ 2018\r\n\ @version\ 0.4,\ 2018\r\n\ @version\ 0.4,\ 2018\r\n\ @version\ 0.3,\ 2018\r\n\ @version\ 0.2,\ 2018\r\n\ @since\ 0.1,\ 03\ Februari\ 2018\r\n\ \r\n\ Modul\ 1\ \:\ Class\ Teller\ terbentuk.\ Jika\ terdapat\ method\ lain\ yang\ memerlukan\ nilai\ return\ selain\ numerik,\ string\ dan\ boolean,\ diganti\r\n\ \ \ \ \ \ \ \ \ \ \ menjadi\ tipe\ method\ String\ dengan\ nilai\ return\ value-nya\ String\ kosong.\r\n\ Modul\ 2\ \:\ \r\n\ Modul\ 3\ \:\r\n\ Modul\ 4\ \:\r\n\ Modul\ 5\ \:\r\n\ Modul\ 6\ \:\r\n\ Modul\ 7\ \:\r\n\ Modul\ 8\ \:\r\n\ Modul\ 9\ \:\r\n
+comment1.params=
+comment1.target=Teller()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Teller\r\n
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+comment2.text=\r\n\ Method\ utama\ untuk\ menjalankan\ program\ JBank\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+numComments=3
