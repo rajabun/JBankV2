@@ -1,3 +1,4 @@
+import java.lang.reflect.*;
 
 /**
  * class Teller berisi method main yang berfungsi sebagai main program dari aplikasi JBank.
@@ -47,5 +48,27 @@ public class Teller
     {
         // put your code here
         
+        //Pengujian modul 2
+        
+        Customer c1 = new Customer();
+        c1.setName("Sanadhi","Sutandi");
+        System.out.println("Nama Customer :" + " " + c1.getName() + "\n");
+        
+        Account a1 = new Account();
+        a1.setBalance(10000);
+        c1.setAccount(a1);
+        System.out.println("Saldo :" + " " + c1.getAccount().getBalance() + "\n");
+        
+        /*
+        Method a = Customer.class.getDeclaredMethod("setName"); 
+        a.setAccessible(true);
+        a.invoke("Sanadhi","Sutandi");
+                     
+        Method b = Account.class.getDeclaredMethod("setBalance"); 
+        b.setAccessible(true);
+        
+        b.setBalance(10000);
+        c1.setAccount(a1);
+        */
     }
 }

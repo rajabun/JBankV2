@@ -55,9 +55,24 @@ public class Account
      * Ditambahkan saat modul 1
      * @param amount Parameter dari method Account dalam bentuk double
      */
-    private void deposit (double amount)
+    //private void deposit (double amount) //bekas modul 1
+    //public void deposit (double amount) //bekas awal modul 2
+    public boolean deposit (double amount)
     {
+        System.out.println("Saldo saat ini : " + getBalance() + "\n");
         
+        if (balance>=0)
+        {
+            balance = balance + amount;
+            System.out.println("Saldo setelah deposit : " + getBalance() + "\n");            
+        }
+        
+        if (balance<0)
+        {
+            System.out.println("Saldo dalam keadaan negatif ! " + "\n");
+            return false;
+        }
+        return true;
     }
     
     /**
@@ -67,7 +82,8 @@ public class Account
      */
     public char getAcctType()
     {
-        return 0;
+        //return 0;
+        return acctType; //ditambahkan saat modul 2
     }
     
     /**
@@ -75,9 +91,11 @@ public class Account
      * Ditambahkan saat modul 1
      * @return balance Mengembalikan isi data dari instance variable balance
      */
-    private double getBalance()
+    public double getBalance() //diubah nama method sementara untuk pengujian di modul 2
+    //private double getBalance() //aslinya di modul 2
     {
-        return 0;
+        //return 0;
+        return balance; //ditambahkan saat modul 2
     }
     
     /**
@@ -87,7 +105,8 @@ public class Account
      */
     public String getId()
     {
-        return " ";
+        //return " ";
+        return id; //ditambahkan saat modul 2
     }
     
     /**
@@ -95,9 +114,10 @@ public class Account
      * Ditambahkan saat modul 1
      * @param amount Parameter dari method setBalance dalam bentuk double
      */
-    private void setBalance(double amount)
+    public void setBalance(double amount) //diubah nama method sementara untuk pengujian di modul 2
+    //private void setBalance(double amount) //aslinya di modul 2
     {
-        
+        balance = amount; //ditambahkan saat modul 2
     }
     
     /**
@@ -107,7 +127,7 @@ public class Account
      */
     public void setID(String acctId)
     {
-        
+        id = acctId; //ditambahkan saat modul 2
     }
     
     /**
@@ -117,7 +137,7 @@ public class Account
      */
     public void setAcctType(char type)
     {
-        
+        acctType = type; //ditambahkan saat modul 2
     }
     
     /**
@@ -125,9 +145,30 @@ public class Account
      * Ditambahkan saat modul 1
      * @param amount Parameter dari method withdraw dalam bentuk double
      */
-    private void withdraw(double amount)
-    {
+    //private void withdraw(double amount) //bekas awal modul 2
+    public boolean withdraw(double amount)
+    {       
+        System.out.println("Saldo saat ini : " + getBalance() + "\n");
         
+        if (balance>=0)
+        {
+            balance = balance - amount;
+            System.out.println("Saldo setelah deposit : " + getBalance() + "\n");
+            if (balance<0)
+            {
+                System.out.println("Saldo dalam keadaan negatif ! " + "\n");
+                balance = balance + amount;
+                System.out.println("Saldo saat ini : " + getBalance() + "\n");
+                return false;
+            }
+        }
+        
+        if (balance<0)
+        {
+            System.out.println("Saldo dalam keadaan negatif ! " + "\n");
+            return false;
+        }
+        return true;
     }
     
 }

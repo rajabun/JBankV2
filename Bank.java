@@ -39,6 +39,9 @@ public class Bank
     public static String bankAddress = "1234 JavaStreet, AnyCity, ThisState, 34567";
     public static int maxNumOfCustomers = 20;
     public static String bankName = "JBANK";
+    
+    private static int numOfCurrentCustomer; //ditambahkan di modul 2
+    private static int nextID; //ditambahkan di modul 2
 
     /**
      * Constructor for objects of class Bank
@@ -46,6 +49,16 @@ public class Bank
     public Bank()
     {
         // initialise instance variables
+    }
+    
+    /**
+     * Method untuk menampilkan nomor customer yang sekarang
+     * Ditambahkan saat modul 2
+     * @return numOfCurrentCustomer Mengembalikan isi data dari instance variable numOfCurrentCustomer
+     */
+    public static int getnumOfCurrentCustomer()
+    {
+        return numOfCurrentCustomer;
     }
     
     /**
@@ -123,9 +136,20 @@ public class Bank
      * Ditambahkan saat modul 1
      * @return nextCustID Mengembalikan isi data dari instance variable nextCustID
      */
-    public static int getNextID()
+    public static int getNextId()
     {
-        return 0;
+        //nextCustID = lastCustID + 1;
+        /*
+         * Soal modul 2 tugas 4 bagian b
+         * 
+         * + getNextId
+         * a. Method akan me-return variable nextCustID
+         * b. Melakukan tracking nilai customer ID setiap kali me-return nextCustID
+         *      i. lastCustID dan nextCustID dimulai dari 1000
+         *      ii. nextCustID = lastCustID + 1
+         * 
+         */
+        return nextCustID;        
     }
     
     /**
@@ -137,7 +161,7 @@ public class Bank
     {
         return " ";
     }
-    
+   
     /**
      * Method untuk menampilkan premium rate
      * Ditambahkan saat modul 1

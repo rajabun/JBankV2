@@ -1,3 +1,5 @@
+import java.util.regex.Matcher; //ditambahkan saat modul 2
+import java.util.regex.Pattern; //ditambahkan saat modul 2
 
 /**
  * class Customer berisi kumpulan method yang berfungsi untuk mengatur customer.
@@ -79,7 +81,8 @@ public class Customer
      */
     private String getAddress()
     {
-        return " ";
+        //return " ";
+        return streetAddress + ", " + cityAddress + ", " + zipOrPostalCode; //ditambahkan saat modul 2
     }
     
     /**
@@ -87,10 +90,12 @@ public class Customer
      * Ditambahkan saat modul 1
      * @return accounts Mengembalikan isi data dari instance variable accounts
      */
-    //private Account getAccount()
-    private String getAccount()
+    //private String getAccount() //bekas modul 1
+    public Account getAccount() //diubah nama method sementara untuk pengujian di modul 2
+    //private Account getAccount() //aslinya di modul 2
     {
-        return " ";
+        //return " ";
+        return accounts; //ditambahkan saat modul 2
     }
     
     /**
@@ -100,7 +105,8 @@ public class Customer
      */
     private int getCustomerId()
     {
-        return 0;
+        //return 0;
+        return custId; //ditambahkan saat modul 2
     }
     
     /**
@@ -110,7 +116,8 @@ public class Customer
      */
     private String getEmail()
     {
-        return " ";
+        //return " ";
+        return email; //ditambahkan saat modul 2
     }
     
     /**
@@ -118,9 +125,12 @@ public class Customer
      * Ditambahkan saat modul 1
      * @return name Mengembalikan isi data dari instance variable name
      */
-    private String getCustomerName()
+    //private String getCustomerName()
+    public String getName() //diubah nama methodnya sementara untuk pengujian di modul 2    
+    //private String getName() //diubah nama methodnya di modul 2 //aslinya di modul 2
     {
-        return " ";
+        //return " ";
+        return lastName + ";" + firstName; //ditambahkan saat modul 2
     }
     
     /**
@@ -130,7 +140,8 @@ public class Customer
      */
     public int getNumOfAccounts()
     {
-        return 0;
+        //return 0;
+        return numberOfCurrentAccounts; //ditambahkan saat modul 2
     }
     
     /**
@@ -140,7 +151,8 @@ public class Customer
      */
     private String getPhoneNumber()
     {
-        return " ";
+        //return " ";
+        return phoneNumber; //ditambahkan saat modul 2
     }
     
     /**
@@ -152,7 +164,9 @@ public class Customer
      */
     private void setAddress(String street, String city, String code)
     {
-        
+        streetAddress = street; //ditambahkan saat modul 2
+        cityAddress = city; //ditambahkan saat modul 2
+        zipOrPostalCode = code; //ditambahkan saat modul 2
     }
     
     /**
@@ -160,9 +174,38 @@ public class Customer
      * Ditambahkan saat modul 1
      * @param emailAddress Parameter dari method setAddress dalam bentuk String
      */
-    private void setEmail(String emailAddress)
+    //private void setEmail(String emailAddress)
+    private boolean setEmail(String emailAddress) //diubah di modul 2
     {
         
+        // ^ : Matches the beginning of the line
+        // (re) : Grouping
+        // . : Any character (may or may not match line terminators)
+        // re+ : Matches 1 or more of the previous thing
+        // @ : untuk @ dalam format email
+        // $ : Matches the end of the line
+        // ^(.+)@(.+)$ berarti abcde,123@abcde.com
+        
+        String regex = "^(.+)@(.+)$"; //membuat string yang akan digunakan pada class Pattern
+        
+        //A regular expression, specified as a string, must first be compiled into an instance of this class
+        Pattern pattern = Pattern.compile(regex); 
+        //The resulting pattern can then be used to create a Matcher object that can match arbitrary character sequences against the regular expression.
+        Matcher matcher = pattern.matcher((CharSequence) emailAddress);
+        
+        if(matcher.matches() == true)
+        {
+            email = emailAddress; //ditambahkan saat modul 2
+            //All of the state involved in performing a match resides in the matcher, so many matchers can share the same pattern.
+            System.out.println(email + " : " + matcher.matches() + "\n");
+        }
+        
+        else if(matcher.matches() == false)
+        {
+            //All of the state involved in performing a match resides in the matcher, so many matchers can share the same pattern.
+            System.out.println("Maaf format email yang anda masukan salah" + " : "+ matcher.matches() + "\n");            
+        }
+        return matcher.matches(); //mengembalikan hasil validasi apakah true atau false
     }
     
     /**
@@ -171,18 +214,32 @@ public class Customer
      * @param lname Parameter dari method setAddress dalam bentuk String
      * @param fname Parameter dari method setAddress dalam bentuk String
      */
-    private void setCustomerName(String lname, String fname)
+    //private void setCustomerName(String lname, String fname)
+    public void setName(String lname, String fname) //diubah nama methodnya di modul 2, buat pengujian
+    //private void setName(String lname, String fname) //diubah nama methodnya di modul 2 //aslinya di modul 2
     {
-        
+        firstName = fname; //ditambahkan saat modul 2
+        lastName = lname; //ditambahkan saat modul 2        
     }
     
-     /**
+    /**
      * Method untuk memasukkan nomor telepon customer
      * Ditambahkan saat modul 1
      * @param phoneNum Parameter dari method setAddress dalam bentuk String
      */
     private void setPhoneNumber(String phoneNum)
     {
-        
+        phoneNumber = phoneNum; //ditambahkan saat modul 2
+    }
+    
+    /**
+     * Method untuk memasukkan akun customer
+     * Ditambahkan saat modul 2
+     * @param accounts Parameter dari method setAccount yang merujuk ke class Account
+     */
+    public void setAccount(Account accounts) //diubah nama method sementara untuk pengujian di modul 2
+    //private void setAccount(Account accounts) //aslinya di modul 2
+    {
+        this.accounts = accounts; //ditambahkan saat modul 2
     }
 }
